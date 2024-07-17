@@ -30,7 +30,6 @@ namespace Universal
             }
 
             var universal = Instantiate(assetBundle.LoadAsset<GameObject>("LaikaUniversal"), parent: car.transform);
-
             Destroy(car.GetComponent<MeshFilter>());
             Destroy(car.transform.Find("Roof").GetComponent<MeshFilter>());
             Destroy(car.transform.GetChild(car.transform.childCount - 3).gameObject);
@@ -62,7 +61,8 @@ namespace Universal
                 }
             }
 
-            Instantiate(assetBundle.LoadAsset<GameObject>("seat"), parent: car.transform.Find("Plane_1862"));
+            var seat = Instantiate(assetBundle.LoadAsset<GameObject>("seat"), parent: car.transform.Find("Plane_1862"));
+            seat.transform.localPosition = new Vector3(0, 0, 0);
             assetBundle.Unload(false);
         }
     }

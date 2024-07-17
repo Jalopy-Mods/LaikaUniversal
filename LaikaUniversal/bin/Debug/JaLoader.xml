@@ -1,0 +1,459 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JaLoader</name>
+    </assembly>
+    <members>
+        <member name="M:JaLoader.CustomObjectsManager.RegisterObject(UnityEngine.GameObject,System.String)">
+            <summary>
+            Register a custom object to the database.
+            </summary>
+            <param name="obj">The object in question</param>
+            <param name="registryName">Internal object name</param>
+        </member>
+        <member name="M:JaLoader.CustomObjectsManager.GetObject(System.String)">
+            <summary>
+            Get the object from the database.
+            </summary>
+            <param name="registryName">Internal object name</param>
+            <returns></returns>
+        </member>
+        <member name="M:JaLoader.CustomObjectsManager.GetRegistryNameByObject(UnityEngine.GameObject)">
+            <summary>
+            Get the registry name from an object.
+            </summary>
+            <param name="obj">The object in question</param>
+            <returns></returns>
+        </member>
+        <member name="M:JaLoader.CustomObjectsManager.SpawnObject(System.String)">
+            <summary>
+            Spawn an object from the database.
+            </summary>
+            <param name="registryName">Internal object name</param>
+            <returns></returns>
+        </member>
+        <member name="M:JaLoader.CustomObjectsManager.SpawnObject(System.String,UnityEngine.Vector3)">
+            <summary>
+            Spawn an object from the database at a specific position.
+            </summary>
+            <param name="registryName">Internal object name</param>
+            <param name="position">The position you'd like to spawn it at</param>
+            <returns></returns>
+        </member>
+        <member name="M:JaLoader.CustomObjectsManager.DeleteObject(System.String)">
+            <summary>
+            Remove an object from the database.
+            </summary>
+            <param name="registryName">Internal object name</param>
+        </member>
+        <member name="M:JaLoader.CustomObjectsManager.SpawnObject(System.String,UnityEngine.Vector3,UnityEngine.Quaternion)">
+            <summary>
+            Spawn an object from the database at a specific position and rotation.
+            </summary>
+            <param name="registryName">Internal object name</param>
+            <param name="position">The position you'd like to spawn it at</param>
+            <param name="rotation">The rotation you'd like to spawn it at</param>
+            <returns></returns>
+        </member>
+        <member name="M:JaLoader.Console.Log(System.Object,System.Object)">
+            <summary>
+            Same as LogMessage().
+            </summary>
+            <param name="sender">The message sender (use ModID or ModName)</param>
+            <param name="message">The message to be sent</param>
+        </member>
+        <member name="M:JaLoader.Console.Log(System.Object)">
+            <summary>
+            Same as LogMessage().
+            </summary>
+            <param name="message">The message to be sent</param>
+        </member>
+        <member name="M:JaLoader.Console.LogMessage(System.Object)">
+            <summary>
+            Logs a normal message to the in-game console.
+            </summary>
+            <param name="message">The message to be sent</param>
+        </member>
+        <member name="M:JaLoader.Console.LogMessage(System.Object,System.Object)">
+            <summary>
+            Logs a normal message to the in-game console.
+            </summary>
+            <param name="sender">The message sender (use ModID or ModName)</param>
+            <param name="message">The message to be sent</param>
+        </member>
+        <member name="M:JaLoader.Console.LogOnlyToFile(System.Object)">
+            <summary>
+            Logs a normal message to the JaLoader_log.log file, does not show in-game.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:JaLoader.Console.LogWarning(System.Object,System.Object)">
+            <summary>
+            Logs a warning to the in-game console.
+            </summary>
+            <param name="sender">The message sender (use ModID or ModName)</param>
+            <param name="message">The message to be sent</param>
+        </member>
+        <member name="M:JaLoader.Console.LogWarning(System.Object)">
+            <summary>
+            Logs a warning to the in-game console.
+            </summary>
+            <param name="message">The message to be sent</param>
+        </member>
+        <member name="M:JaLoader.Console.LogError(System.Object,System.Object)">
+            <summary>
+            Logs an error to the in-game console.
+            </summary>
+            <param name="sender">The message sender (use ModID or ModName)</param>
+            <param name="message">The message to be sent</param>
+        </member>
+        <member name="M:JaLoader.Console.LogError(System.Object)">
+            <summary>
+            Logs an error to the in-game console.
+            </summary>
+            <param name="message">The message to be sent</param>
+        </member>
+        <member name="M:JaLoader.Console.LogDebug(System.Object,System.Object)">
+            <summary>
+            Logs a debug message to the in-game console. These are only visible if debug mode is enabled.
+            </summary>
+            <param name="sender">The message sender (use ModID or ModName)</param>
+            <param name="message">The message to be sent</param>
+        </member>
+        <member name="M:JaLoader.Console.LogDebug(System.Object)">
+            <summary>
+            Logs a debug message to the in-game console. These are only visible if debug mode is enabled.
+            </summary>
+            <param name="message">The message to be sent</param>
+        </member>
+        <member name="M:JaLoader.ExtrasManager.GetHolder(System.String)">
+            <summary>
+            Get the extra holder of an extra by its name
+            </summary>
+            <param name="name">The name of the holder</param>
+            <returns></returns>
+        </member>
+        <member name="M:JaLoader.ExtrasManager.GetHolder(System.Int32)">
+            <summary>
+            Get the extra holder of an extra by its ID
+            </summary>
+            <param name="ID">The ID of the holder</param>
+            <returns></returns>
+        </member>
+        <member name="M:JaLoader.ExtrasManager.GetExtraID(System.String)">
+            <summary>
+            Get the ID of an extra by its name
+            </summary>
+            <param name="name">The name of the extra</param>
+            <returns></returns>
+        </member>
+        <member name="M:JaLoader.ExtrasManager.GetExtraIDByRegistryName(System.String)">
+            <summary>
+            Get the ID of an extra by its registry name
+            </summary>
+            <param name="registryName">The registry name of the extra</param>
+            <returns></returns>
+        </member>
+        <member name="M:JaLoader.ExtrasManager.GetExtraRegistryName(System.Int32)">
+            <summary>
+            Get the registry name of an extra by its ID
+            </summary>
+            <param name="ID">The ID of the extra</param>
+            <returns></returns>
+        </member>
+        <member name="M:JaLoader.ExtrasManager.AddExtraObject(UnityEngine.GameObject,UnityEngine.Vector3,System.String,JaLoader.AttachExtraTo)">
+            <summary>
+            Add an extra to the game
+            </summary>
+            <param name="obj">The object in question</param>
+            <param name="pos">The position of the object</param>
+            <param name="registryName">The registry name of the extra</param>
+            <param name="attachTo">What should it attach to?</param>
+        </member>
+        <member name="M:JaLoader.ExtrasManager.AddExtraObject(UnityEngine.GameObject,UnityEngine.Vector3,System.String,JaLoader.AttachExtraTo,System.Collections.Generic.Dictionary{System.String,System.Boolean})">
+            <summary>
+            Add an extra to the game
+            </summary>
+            <param name="obj">The object in question</param>
+            <param name="pos">The position of the object</param>
+            <param name="registryName">The registry name of the extra</param>
+            <param name="attachTo">What should it attach to?</param>
+            <param name="blockedBy">Parts that may block the installation of this extra part, or replace it (registryName, completely block (true) or replace current part (false))</param>
+        </member>
+        <member name="M:JaLoader.ExtrasManager.ExtraExists(System.String)">
+            <summary>
+            Does an extra exist already?
+            </summary>
+            <param name="registryName">The registry name of the extra</param>
+            <returns></returns>
+        </member>
+        <member name="M:JaLoader.Mod.LoadAsset(System.String,System.String,System.String)">
+            <summary>
+            (Deprecated, use LoadAsset<![CDATA[<T>]]>())
+            Loads the specified asset from an assetbundle
+            <param name="assetName">The file's name</param>
+            <param name="prefabName">The prefab in question</param>
+            <param name="fileSuffix">The file's suffix (usually .unity3d, you can leave empty too)</param>
+            <returns>The loaded GameObject</returns>
+            </summary>
+        </member>
+        <member name="M:JaLoader.Mod.LoadAsset``1(System.String,System.String,System.String,System.String)">
+            <summary>
+            Loads the specified asset from an assetbundle
+            </summary>
+            <typeparam name="T">The type of the asset you want to load</typeparam>
+            <param name="assetName">The file's name</param>
+            <param name="prefabName">The prefab in question</param>
+            <param name="fileSuffix">The file's suffix (usually .unity3d, you can leave empty too)</param>
+            <param name="prefabSuffix">The prefab's suffix (varies on T, for example .mp3 or .png)</param>
+            <returns>The loaded GameObject</returns>
+        </member>
+        <member name="M:JaLoader.Mod.PNGToTexture(System.String)">
+            <summary>
+            Converts a PNG file to a Texture2D, usable in Materials and UI.
+            </summary>
+            <param name="name">The file's name</param>
+            <returns>A new Texture2D, containing your PNG file</returns>
+        </member>
+        <member name="M:JaLoader.Mod.LoadSceneFromAsset(System.String,System.String,System.String)">
+            <summary>
+            Loads a scene from an assetbundle
+            </summary>
+            <param name="assetName">The file's name</param>
+            <param name="sceneName">The scene's name</param>
+            <param name="fileSuffix">The file's suffix (usually .unity3d, you can leave empty too)</param>
+        </member>
+        <member name="M:JaLoader.ModLoader.FindMod(System.String,System.String,System.String)">
+            <summary>
+            Searches for a mod with the specified ID, name and author and returns it if found, otherwise returns null.
+            </summary>
+            <param name="author">The mod's author</param>
+            <param name="ID">The mod's ID</param>
+            <param name="name">The mod's name</param>
+            <returns>The searched Mod if found, otherwise null</returns>
+        </member>
+        <member name="M:JaLoader.ModLoader.FindMod(System.String,System.String)">
+            <summary>
+            Searches for a mod with the specified ID and author and returns it if found, otherwise returns null.
+            </summary>
+            <param name="author">The mod's author</param>
+            <param name="ID">The mod's ID</param>
+            <returns>The searched Mod if found, otherwise null</returns>
+        </member>
+        <member name="M:JaLoader.ModHelper.AddBasicObjectLogic(UnityEngine.GameObject,System.String,System.String,System.Int32,System.Int32,System.Boolean,System.Boolean)">
+            <summary>
+            Make the specified object able to be used in-game
+            </summary>
+            <param name="obj">The object you want to bring to life</param>
+            <param name="objName">The name that will pop up in the notebook</param>
+            <param name="objDescription">The description that will pop up in the notebook</param>
+            <param name="price">The price of the object in stores (only effective if it is buyable)</param>
+            <param name="weight">The weight of the object</param>
+            <param name="canFindInCrates">(Not implemented yet) Should this object be findable in crates?</param>
+            <param name="canBuyInStore">(Not implemented yet) Is this object buyable?</param>
+        </member>
+        <member name="M:JaLoader.ModHelper.AddEnginePartLogic(UnityEngine.GameObject,JaLoader.PartTypes,System.Int32,System.Boolean,System.Boolean)">
+            <summary>
+            Make a custom object be able to be used as an engine part
+            </summary>
+            <param name="obj">The object in question</param>
+            <param name="type">What type of engine component is this?</param>
+            <param name="durability">Max durability</param>
+            <param name="canBuyInDealership">Can this object be bought in laika dealerships?</param>
+            <param name="canFindInJunkCars">(Not implemented yet) Can this object be found at scrapyards/abandoned cars?</param>
+        </member>
+        <member name="M:JaLoader.ModHelper.CreateIconForExtra(UnityEngine.GameObject,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3,System.String)">
+            <summary>
+            Create a part icon for an extra part
+            </summary>
+            <param name="objOnCar">The object that will appear on the car, this should have the desired positions set already</param>
+            <param name="position">The position differences</param>
+            <param name="scale">The scale differences</param>
+            <param name="rotation">The rotation differences</param>
+            <param name="registryName">Internal extra name</param>
+        </member>
+        <member name="M:JaLoader.ModHelper.CreateExtraObject(UnityEngine.GameObject,JaLoader.BoxSizes,System.String,System.String,System.Int32,System.Int32,System.String,JaLoader.AttachExtraTo)">
+            <summary>
+            Create a custom extra object, that can be attached to the car
+            </summary>
+            <param name="objOnCar">The object that will appear on the car, this should have the desired positions set already</param>
+            <param name="size">The size of the box</param>
+            <param name="name">The name of the extra</param>
+            <param name="description">The description of the extra</param>
+            <param name="price">The price of the extra</param>
+            <param name="weight">How much weight does this add to the car</param>
+            <param name="registryName">Internal extra name</param>
+            <param name="attachTo">What should the object attach to?</param>
+            <returns></returns>
+        </member>
+        <member name="M:JaLoader.ModHelper.CreateExtraObject(UnityEngine.GameObject,JaLoader.BoxSizes,System.String,System.String,System.Int32,System.Int32,System.String,JaLoader.AttachExtraTo,System.Collections.Generic.Dictionary{System.String,System.Boolean})">
+            <summary>
+            Create a custom extra object, that can be attached to the car
+            </summary>
+            <param name="objOnCar">The object that will appear on the car, this should have the desired positions set already</param>
+            <param name="size">The size of the box</param>
+            <param name="name">The name of the extra</param>
+            <param name="description">The description of the extra</param>
+            <param name="price">The price of the extra</param>
+            <param name="weight">How much weight does this add to the car</param>
+            <param name="registryName">Internal extra name</param>
+            <param name="attachTo">What should the object attach to?</param>
+            <param name="blockedBy">Parts that may block the installation of this extra part, or replace it (registryName, completely block (true) or replace current part (false))</param>
+            <returns></returns>
+        </member>
+        <member name="M:JaLoader.ModHelper.AdjustPartIconLocation(UnityEngine.GameObject,UnityEngine.Vector3,UnityEngine.Vector3)">
+            <summary>
+            Adjust a custom part's location, rotation and scale for the part icon
+            </summary>
+            <param name="obj">The object in question</param>
+            <param name="position">The position differences</param>
+            <param name="rotation">The rotation differences</param>
+        </member>
+        <member name="M:JaLoader.ModHelper.AdjustPartIconLocation(UnityEngine.GameObject,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3)">
+            <summary>
+            Adjust a custom part's location, rotation and scale for the part icon
+            </summary>
+            <param name="obj">The object in question</param>
+            <param name="position">The position differences</param>
+            <param name="rotation">The rotation differences</param>
+            <param name="scale">The scale differences</param>
+        </member>
+        <member name="M:JaLoader.ModHelper.RemoveAllComponents(UnityEngine.GameObject,System.Type[])">
+            <summary>
+            Remove all the components from a gameobject, except the specified componentTypes
+            </summary>
+            <param name="go">The object in question</param>
+            <param name="componentTypes">The component types that shouldn't be removed</param>
+        </member>
+        <member name="M:JaLoader.ModHelper.AdjustCustomObjectTrunkPosition(UnityEngine.GameObject,UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3)">
+            <summary>
+            Adjust how the object will sit in the trunk
+            </summary>
+            <param name="obj">The object in question</param>
+            <param name="position">Adjustments you may need to make so the object doesn't clip through the body panels/roof rack/through other objects</param>
+            <param name="rotation">Adjustments you may need to make so the object doesn't clip through the body panels/roof rack/through other objects</param>
+            <param name="dimensions">Dimensions of the object. The trunk has 2 4x2x3 slots (this are also the default dimensions for most of the engine parts). Try to experiment with whatever works for your object</param>
+        </member>
+        <member name="M:JaLoader.ModHelper.AdjustCustomObjectSize(UnityEngine.GameObject,UnityEngine.Vector3)">
+            <summary>
+            Adjust the scale of the object
+            </summary>
+            <param name="obj">The object in question</param>
+            <param name="scale">The desired scale</param>
+        </member>
+        <member name="M:JaLoader.ModHelper.AdjustCustomObjectPosition(UnityEngine.GameObject,UnityEngine.Vector3,UnityEngine.Vector3)">
+            <summary>
+            Adjust how the object looks like when being held
+            </summary>
+            <param name="obj">The object in question</param>
+            <param name="throwRotation">The euler angles that the object will have, relative to the player once the item is no longer being held (dropped)</param>
+            <param name="position">The object's position relative to the player while being held</param>
+        </member>
+        <member name="M:JaLoader.ModHelper.GetGlowMaterial(UnityEngine.Material)">
+            <summary>
+            Create a glowing version of the specified material
+            </summary>
+        </member>
+        <member name="M:JaLoader.ModHelper.ConfigureCustomEngine(UnityEngine.GameObject,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Configure a custom engine to your likings
+            </summary>
+            <param name="obj">The object in question</param>
+            <param name="acceleration">The 0-80 speed, in seconds</param>
+            <param name="topSpeed">The max speed achievable with this engine</param>
+            <param name="useDefaultAudio">Should it use the default engine audio?</param>
+        </member>
+        <member name="M:JaLoader.ModHelper.ConfigureCustomExtra(UnityEngine.GameObject,System.Int32)">
+            <summary>
+            This method is not implemented yet
+            </summary>
+            <param name="obj"></param>
+            <param name="rarity"></param>
+        </member>
+        <member name="M:JaLoader.ModHelper.ConfigureCustomEngine(UnityEngine.GameObject,System.Int32,System.Int32,UnityEngine.AudioClip,System.Single)">
+            <summary>
+            Configure a custom engine to your likings
+            </summary>
+            <param name="obj">The object in question</param>
+            <param name="acceleration">The 0-80 speed, in seconds</param>
+            <param name="topSpeed">The max speed achievable with this engine</param>
+            <param name="customAudio">The audio this engine should use</param>
+            <param name="audioPitch">The pitch of the audio (Default is 9.5f)</param>
+        </member>
+        <member name="M:JaLoader.ModHelper.ConfigureCustomCarburettor(UnityEngine.GameObject,System.Single)">
+            <summary>
+            Configure a custom carburettor to your likings
+            </summary>
+            <param name="obj">The object in question</param>
+            <param name="fuelConsumptionRate">How many liters of fuel per 100km will this consume?</param>
+        </member>
+        <member name="M:JaLoader.ModHelper.ConfigureCustomAirFilter(UnityEngine.GameObject,System.Single)">
+            <summary>
+            Configure a custom air filter to your likings
+            </summary>
+            <param name="obj">The object in question</param>
+            <param name="engineWearRate">How should the engine's wear rate be affected? (ideally, make this lower than 1, as the default value is 0.0001; the formula for calculating the wear rate is 0.0001 - (0.0001 * engineWearRate))</param>
+        </member>
+        <member name="M:JaLoader.ModHelper.ConfigureCustomIgnitionCoil(UnityEngine.GameObject,System.Single,System.Single)">
+            <summary>
+            Configure a custom ignition coil to your likings
+            </summary>
+            <param name="obj">The object in question</param>
+            <param name="initialFuelConsumptionRate">How many liters of fuel will starting the car use?</param>
+            <param name="ignitionTime">How long does the car take to start?</param>
+        </member>
+        <member name="M:JaLoader.ModHelper.ConfigureCustomFuelTank(UnityEngine.GameObject,System.Int32,System.Int32)">
+            <summary>
+            Configure a custom fuel tank to your likings
+            </summary>
+            <param name="obj">The object in question</param>
+            <param name="fuelCapacity">The maximum fuel capacity it can hold</param>
+            <param name="initialFuelCapacity">How many liters of fuel should the object have when it's spawned?</param>
+        </member>
+        <member name="T:JaLoader.SerializableDictionary`2">
+            <summary>
+            A Dictionary that can be serialized.
+            </summary>
+        </member>
+        <member name="M:Discord.NetworkManager.GetPeerId">
+            <summary>
+            Get the local peer ID for this process.
+            </summary>
+        </member>
+        <member name="M:Discord.NetworkManager.Flush">
+            <summary>
+            Send pending network messages.
+            </summary>
+        </member>
+        <member name="M:Discord.NetworkManager.OpenPeer(System.UInt64,System.String)">
+            <summary>
+            Open a connection to a remote peer.
+            </summary>
+        </member>
+        <member name="M:Discord.NetworkManager.UpdatePeer(System.UInt64,System.String)">
+            <summary>
+            Update the route data for a connected peer.
+            </summary>
+        </member>
+        <member name="M:Discord.NetworkManager.ClosePeer(System.UInt64)">
+            <summary>
+            Close the connection to a remote peer.
+            </summary>
+        </member>
+        <member name="M:Discord.NetworkManager.OpenChannel(System.UInt64,System.Byte,System.Boolean)">
+            <summary>
+            Open a message channel to a connected peer.
+            </summary>
+        </member>
+        <member name="M:Discord.NetworkManager.CloseChannel(System.UInt64,System.Byte)">
+            <summary>
+            Close a message channel to a connected peer.
+            </summary>
+        </member>
+        <member name="M:Discord.NetworkManager.SendMessage(System.UInt64,System.Byte,System.Byte[])">
+            <summary>
+            Send a message to a connected peer over an opened message channel.
+            </summary>
+        </member>
+    </members>
+</doc>

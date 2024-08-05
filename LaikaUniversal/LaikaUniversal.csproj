@@ -39,6 +39,9 @@
             <HintPath>E:\SteamLibrary\steamapps\common\Jalopy\Jalopy_Data\Managed\Assembly-CSharp.dll</HintPath>
             <Private>False</Private>
         </Reference>
+        <Reference Include="HarmonyXInterop">
+          <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Jalopy\Jalopy_Data\Managed\HarmonyXInterop.dll</HintPath>
+        </Reference>
         <Reference Include="JaLoader">
             <HintPath>E:\SteamLibrary\steamapps\common\Jalopy\Jalopy_Data\Managed\JaLoader.dll</HintPath>
         </Reference>

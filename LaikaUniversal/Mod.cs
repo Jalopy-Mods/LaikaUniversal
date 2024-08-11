@@ -100,6 +100,7 @@ namespace Universal
                         Destroy(obj.GetComponent<MeshFilter>());
                         universal.transform.GetChild(0).parent = obj.transform;
                         car.transform.Find("R_LicensePlate").localPosition = new Vector3(-5.65f, -3.55f, 0);
+                        obj.AddComponent<TrunkOpener>();
                         break;
                     case "BootLock":
                         obj.transform.localPosition = new Vector3(-0.07f, -0.525f, -0.3f);
@@ -120,6 +121,29 @@ namespace Universal
 
             // Rotation not managed by mesh origin, but by script iTween and DoorLogicC
             // Can maybe create a harmony prefix to change the position of the door while the true component is doing its thing in the meantime.
+        }
+    }
+
+    public class TrunkOpener : MonoBehaviour
+    {
+        private bool _isOpen;
+        private float _time;
+        private readonly Vector3 _openPos = new Vector3(-5.8f, -1.7f, 0);
+        private readonly Vector3 _closedPos = new Vector3(-3.93f, -1.77f, 0);
+        public int speedMultiplier = 6;
+
+        public void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.T))
+            {
+                _isOpen = !_isOpen;
+                _time = 0;
+            }
+
+            if (!(_time < 1)) return;
+            _time += Time.deltaTime * speedMultiplier;
+            transform.localPosition =
+                _isOpen ? Vector3.Slerp(_closedPos, _openPos, _time) : Vector3.Slerp(_openPos, _closedPos, _time);
         }
     }
 }

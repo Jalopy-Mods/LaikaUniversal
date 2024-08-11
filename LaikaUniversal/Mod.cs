@@ -1,4 +1,6 @@
-﻿using JaLoader;
+﻿using System;
+using HarmonyLib;
+using JaLoader;
 using UnityEngine;
 
 namespace Universal
@@ -21,6 +23,7 @@ namespace Universal
         {
             base.OnEnable();
             LoadInGame();
+            Harmony.CreateAndPatchAll(typeof(Universal));
         }
 
         private void LoadInMainMenu()
@@ -109,8 +112,37 @@ namespace Universal
                         break;
                     case "Slot 1":
                         Destroy(obj.GetComponent<MeshFilter>());
-                        Destroy(obj);
-                        Debug.LogWarning("Destroyed Boot Slot 1");
+
+                        // Find all child
+
+                        foreach (Transform child in obj.transform)
+                        {
+                            switch (child.name)
+                            {
+                                case "Boot":
+                                    Destroy(child.GetComponent<MeshFilter>());
+                                    break;
+                                case "WheelHolder" when Math.Abs(child.localEulerAngles.x - 270) < 1:
+                                    child.localPosition =
+                                        new Vector3(-4.45f, 0, 4.14f); // Avoid floating point error
+                                    break;
+                                case "WheelHolder":
+                                    child.localEulerAngles = new Vector3(270, 165, 90);
+                                    child.localPosition = new Vector3(-4.45f, 0, 3.66f);
+                                    break;
+                                default:
+                                {
+                                    if (child.name.Contains("Slot"))
+                                    {
+
+                                    }
+
+                                    break;
+                                }
+                            }
+                        }
+
+
                         break;
                 }
             }
@@ -122,28 +154,43 @@ namespace Universal
             // Rotation not managed by mesh origin, but by script iTween and DoorLogicC
             // Can maybe create a harmony prefix to change the position of the door while the true component is doing its thing in the meantime.
         }
+
+        [HarmonyPrefix]
+        [HarmonyPatch(typeof(DoorLogicC), nameof(DoorLogicC.Trigger))]
+        // ReSharper disable once InconsistentNaming
+        public static bool DoorLogicC_Trigger_Prefix(DoorLogicC __instance)
+        {
+            if (__instance.gameObject.name != "Boot") return true;
+            __instance.transform.parent.GetComponent<TrunkOpener>().Trigger();
+            return false;
+
+        }
     }
 
     public class TrunkOpener : MonoBehaviour
     {
         private bool _isOpen;
         private float _time;
-        private readonly Vector3 _openPos = new Vector3(-5.8f, -1.7f, 0);
         private readonly Vector3 _closedPos = new Vector3(-3.93f, -1.77f, 0);
-        public int speedMultiplier = 6;
+        private readonly Vector3 _openPos = new Vector3(-6.7f, 0, 0);
+        private readonly Vector3 _closedRot = new Vector3(0, 0, 0);
+        private readonly Vector3 _openRot = new Vector3(0, 0, 240);
+        public int speedMultiplier = 2;
 
         public void Update()
         {
-            if (Input.GetKeyDown(KeyCode.T))
-            {
-                _isOpen = !_isOpen;
-                _time = 0;
-            }
-
             if (!(_time < 1)) return;
             _time += Time.deltaTime * speedMultiplier;
             transform.localPosition =
                 _isOpen ? Vector3.Slerp(_closedPos, _openPos, _time) : Vector3.Slerp(_openPos, _closedPos, _time);
+            transform.localRotation =
+                _isOpen ? Quaternion.Slerp(Quaternion.Euler(_closedRot), Quaternion.Euler(_openRot), _time) : Quaternion.Slerp(Quaternion.Euler(_openRot), Quaternion.Euler(_closedRot), _time);
+        }
+
+        public void Trigger()
+        {
+            _isOpen = !_isOpen;
+            _time = 0;
         }
     }
 }

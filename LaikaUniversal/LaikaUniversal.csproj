@@ -35,15 +35,14 @@
         <Username Condition="'$(Username)' == ''">$([System.Environment]::UserName)</Username>
     </PropertyGroup>
     <ItemGroup>
-        <Reference Include="Assembly-CSharp">
-            <HintPath>E:\SteamLibrary\steamapps\common\Jalopy\Jalopy_Data\Managed\Assembly-CSharp.dll</HintPath>
-            <Private>False</Private>
+        <Reference Include="0Harmony">
+          <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Jalopy\Jalopy_Data\Managed\0Harmony.dll</HintPath>
         </Reference>
-        <Reference Include="HarmonyXInterop">
-          <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Jalopy\Jalopy_Data\Managed\HarmonyXInterop.dll</HintPath>
+        <Reference Include="Assembly-CSharp">
+            <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Jalopy\Jalopy_Data\Managed\Assembly-CSharp.dll</HintPath>
         </Reference>
         <Reference Include="JaLoader">
-            <HintPath>E:\SteamLibrary\steamapps\common\Jalopy\Jalopy_Data\Managed\JaLoader.dll</HintPath>
+            <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Jalopy\Jalopy_Data\Managed\JaLoader.dll</HintPath>
         </Reference>
         <Reference Include="System"/>
         <Reference Include="System.Core"/>
@@ -52,10 +51,10 @@
         <Reference Include="System.Data"/>
         <Reference Include="System.Xml"/>
         <Reference Include="Theraot.Core">
-            <HintPath>E:\SteamLibrary\steamapps\common\Jalopy\Jalopy_Data\Managed\Theraot.Core.dll</HintPath>
+            <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Jalopy\Jalopy_Data\Managed\Theraot.Core.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.CoreModule">
-            <HintPath>E:\SteamLibrary\steamapps\common\Jalopy\Jalopy_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+            <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Jalopy\Jalopy_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
         </Reference>
     </ItemGroup>
     <ItemGroup>

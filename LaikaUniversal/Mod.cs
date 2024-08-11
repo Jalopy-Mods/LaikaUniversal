@@ -122,21 +122,21 @@ namespace Universal
                                 case "Boot":
                                     Destroy(child.GetComponent<MeshFilter>());
                                     break;
-                                case "WheelHolder" when Math.Abs(child.localEulerAngles.x - 270) < 1:
+                                case "WheelHolder" when Math.Abs(child.localEulerAngles.y - 270) < 1:
                                     child.localPosition =
                                         new Vector3(-4.45f, 0, 4.14f); // Avoid floating point error
                                     break;
-                                case "WheelHolder":
+                                case "WheelHolder" when Math.Abs(child.localEulerAngles.y - 165.2) < 1:
                                     child.localEulerAngles = new Vector3(270, 165, 90);
                                     child.localPosition = new Vector3(-4.45f, 0, 3.66f);
                                     break;
                                 default:
                                 {
-                                    if (child.name.Contains("Slot"))
+                                    if (child.name.Contains("Slot") || child.name.Contains("Group"))
                                     {
-
+                                        var posCorrection = new Vector3(0.2f, 0.09f, 0.12f);
+                                        child.localPosition += posCorrection;
                                     }
-
                                     break;
                                 }
                             }
